@@ -1,0 +1,40 @@
+language: node_js
+node_js:
+  - 12
+dist: jammy
+sudo: required
+services:
+  - docker
+
+  # Assuming the .travis.yml file is in the project directory, and there is a separate sub-directory for each service
+  # Use either `docker-compose` or individual `docker build` commands
+  # Build
+before_install:
+  - docker-compose down
+  - docker image prune --all
+  - docker build -t udagram-api-feed ./udagram-api-feed
+  - docker build -t udagram-api-user ./udagram-api-user
+  - docker build -t udagram-frontend ./udagram-frontend
+  - docker build -t reverseproxy ./udagram-api-feed
+
+# Tagging & Push
+# Tip: Use different tags each time you push images to the Dockerhub.
+after_success:
+  # Assuming DOCKER_PASSWORD and DOCKER_USERNAME are set in the Travis repository settings
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  # Tag udagram-api-feed image
+  - docker tag udagram-api-feed ramshadows/udagram-api-feed:v2
+  # Push udagram-api-feed
+  - docker push ramshadows/udagram-api-feed:v2
+  # Tag udagram-api-user image
+  - docker tag udagram-api-user ramshadows/udagram-api-user:v2
+  # Push udagram-api-user image
+  - docker push ramshadows/udagram-api-user:v2
+  #Tag udagram-frontend image
+  - docker tag udagram-frontend ramshadows/udagram-frontend:v2
+  # Push udagram-frontend
+  - docker push ramshadows/udagram-frontend:v2
+  #Tag reverseproxy image
+  - docker tag reverseproxy ramshadows/reverseproxy:v2
+  # Push reverseproxy image
+  - docker push ramshadows/reverseproxy:v2
