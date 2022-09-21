@@ -1,6 +1,6 @@
 FROM node:12
 # Create app directory
-RUN mkdir  app
+RUN mkdir -p  app/
 WORKDIR /app
 
 # Install app dependencies
