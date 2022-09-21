@@ -2,6 +2,7 @@ FROM node:12
 # Create app directory
 RUN mkdir  app
 WORKDIR /app
+RUN ls -la
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied where available (npm@5+)
 COPY package*.json /app/
