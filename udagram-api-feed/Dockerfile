@@ -8,5 +8,6 @@ ADD package*.json /app/package.json
 RUN npm ci 
 # Bundle app source
 COPY . .
+ADD . /app
 EXPOSE 8080
 CMD [ "npm", "run", "prod" ]
