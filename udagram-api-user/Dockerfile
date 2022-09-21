@@ -4,10 +4,11 @@ WORKDIR /app
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied where available (npm@5+)
 COPY package*.json ./
-ADD package*.json /app/package.json
+RUN cp package*.json /app/package.json
 RUN npm ci 
+ADD . /app
 # Bundle app source
 COPY . .
-ADD . /app
+
 EXPOSE 8080
 CMD [ "npm", "run", "prod" ]
