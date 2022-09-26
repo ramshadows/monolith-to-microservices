@@ -1,0 +1,6 @@
+export POSTGRES_DB="project3_db_dev"
+export AWS_BUCKET="project3sebucket"
+export AWS_REGION="us-east-1"
+export AWS_PROFILE="default"
+export JWT_SECRET="testing"
+export URL="http://localhost:8100"

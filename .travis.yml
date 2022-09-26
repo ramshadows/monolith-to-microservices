@@ -21,7 +21,7 @@ before_install:
 # Tip: Use different tags each time you push images to the Dockerhub.
 after_success:
   # Assuming DOCKER_PASSWORD and DOCKER_USERNAME are set in the Travis repository settings
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
   # Tag udagram-api-feed image
   - docker tag udagram-api-feed ramshadows/udagram-api-feed:v2
   # Push udagram-api-feed
