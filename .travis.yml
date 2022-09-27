@@ -24,16 +24,16 @@ after_success:
   # Tag udagram-api-feed image
   #- docker tag udagram-api-feed ramshadows/udagram-api-feed:v3
   # Push udagram-api-feed
-  - docker push ramshadows/udagram-api-feed:v3
+  - docker push ramshadows/udagram-api-feed:v4
   # Tag udagram-api-user image
   #- docker tag udagram-api-user ramshadows/udagram-api-user:v3
   # Push udagram-api-user image
-  - docker push ramshadows/udagram-api-user:v3
+  - docker push ramshadows/udagram-api-user:v4
   #Tag udagram-frontend image
   #- docker tag udagram-frontend ramshadows/udagram-frontend:v3
   # Push udagram-frontend
-  - docker push ramshadows/udagram-frontend:v3
+  - docker push ramshadows/udagram-frontend:v4
   #Tag reverseproxy image
   #- docker tag reverseproxy ramshadows/reverseproxy:v3
   # Push reverseproxy image
-  - docker push ramshadows/reverseproxy:v3
+  - docker push ramshadows/reverseproxy:v4
