@@ -9,8 +9,10 @@ COPY ./udagram-frontend/package*.json ./
 RUN npm install -g npm@latest
 
 RUN npm install --force
+
 # Bundle app source
 COPY . .
+RUN ionic init
 RUN ionic build
 ## Run 
 FROM nginx:alpine
