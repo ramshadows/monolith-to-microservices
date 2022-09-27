@@ -43,3 +43,6 @@ venv/
 set_env.sh
 *env-
 *aws-secret.yaml
+*aws-secret.yaml
+*env-
+*env-secret.yaml
