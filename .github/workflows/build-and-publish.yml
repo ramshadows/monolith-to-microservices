@@ -14,9 +14,7 @@ jobs:
     name: Build Docker image and push to repositories
     # run only when code is compiling and tests are passing
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./udagram-api-feed
+    
 
     # steps to perform in job
     steps:
@@ -48,10 +46,10 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./udagram-api-feed/Dockerfile
-          tags: |
-            ramshadows/udagram-api-feed:v3
-            ghcr.io/ramshadows/udagram-api-feed:v3
+          file: docker-compose-build.yaml
+          #tags: |
+            #ramshadows/udagram-api-feed:v3
+            #ghcr.io/ramshadows/udagram-api-feed:v3
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
