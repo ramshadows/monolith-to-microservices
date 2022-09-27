@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 # update npm to the latest version
 RUN npm install -g npm@latest
+RUN sudo apt-get -y install gcc g++ make
 RUN npm install --force
 # Bundle app source
 COPY . .
