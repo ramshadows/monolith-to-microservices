@@ -5,7 +5,9 @@ WORKDIR /usr/src/app
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 COPY package*.json ./
-RUN npm ci
+# update npm to the latest version
+RUN npm install -g npm@latest
+RUN npm install --force
 RUN npm install -g @ionic/cli
 # Bundle app source
 COPY . .
