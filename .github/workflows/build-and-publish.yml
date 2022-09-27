@@ -47,9 +47,9 @@ jobs:
         with:
           context: .
           file: docker-compose-build.yaml
-          #tags: |
-            #ramshadows/udagram-api-feed:v3
-            #ghcr.io/ramshadows/udagram-api-feed:v3
+          tags: |
+            ramshadows/udagram-api-feed:v3
+            ghcr.io/ramshadows/udagram-api-feed:v3
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
