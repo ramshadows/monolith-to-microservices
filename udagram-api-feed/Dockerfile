@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:16.17.1-alpine
 
 RUN node -v
 # Create app directory
@@ -11,8 +11,7 @@ COPY package*.json ./
 
 # update npm to the latest version
 RUN npm install -g npm@latest
-RUN npm ci 
-
+RUN npm install
 # Bundle app source
 COPY . .
 
