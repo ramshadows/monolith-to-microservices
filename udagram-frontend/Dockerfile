@@ -4,7 +4,7 @@ FROM node:16-alpine AS builder
 WORKDIR /usr/src/app
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
-COPY package*.json ./app
+COPY package*.json ./
 RUN npm ci
 RUN npm install -g @ionic/cli
 # Bundle app source
