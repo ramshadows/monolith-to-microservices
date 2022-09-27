@@ -42,14 +42,47 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and Push image
+      - name: Build and Push udagram-api-feed image
         uses: docker/build-push-action@v2
         with:
           context: .
           file: ./udagram-api-feed/Dockerfile
           tags: |
             ramshadows/udagram-api-feed:v3
-            ghcr.io/ramshadows/udagram-api-feed:v3
+            ghcr.io/ramshadows/udagram-api-feed:v4
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Build and Push udagram-api-user image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./udagram-api-user/Dockerfile
+          tags: |
+            ramshadows/udagram-api-user:v4
+            ghcr.io/ramshadows/udagram-api-user:v3
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Build and Push udagram-frontend image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./udagram-frontend/Dockerfile
+          tags: |
+            ramshadows/udagram-frontend:v5
+            ghcr.io/ramshadows/udagram-frontend:v5
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Build and Push udagram-reverseproxy image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./udagram-reverseproxy/Dockerfile
+          tags: |
+            ramshadows/udagram-reverseproxy:v5
+            ghcr.io/ramshadows/udagram-reverseproxy:v5
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
