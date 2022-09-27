@@ -12,7 +12,7 @@ RUN npm install --force
 
 # Bundle app source
 COPY . .
-RUN ionic init
+RUN ionic init "An Ionic project"
 RUN ionic build
 ## Run 
 FROM nginx:alpine
