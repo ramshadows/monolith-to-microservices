@@ -2,7 +2,7 @@ FROM node:16.17.1-alpine
 
 RUN node -v
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /udagram-api-feed
 #RUN touch /usr/src/app/package.json
 
 # Install app dependencies

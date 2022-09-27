@@ -46,7 +46,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: docker-compose-build.yaml
+          file: ./udagram-api-feed/Dockerfile
           tags: |
             ramshadows/udagram-api-feed:v3
             ghcr.io/ramshadows/udagram-api-feed:v3
