@@ -1,5 +1,6 @@
 FROM node:16-alpine
 
+RUN node -v
 # Create app directory
 WORKDIR /usr/src/app
 #RUN touch /usr/src/app/package.json
