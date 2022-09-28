@@ -4,15 +4,12 @@ FROM beevelop/ionic:latest AS ionic
 WORKDIR /usr/src/app
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
-COPY ./udagram-frontend/package*.json ./
+COPY package*.json ./
 # update npm to the latest version
 RUN npm install -g npm@latest
-
 RUN npm install --force
-
 # Bundle app source
 COPY . .
-RUN ionic init "An Ionic project"
 RUN ionic build
 ## Run 
 FROM nginx:alpine

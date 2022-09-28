@@ -32,7 +32,7 @@ after_success:
   # Push udagram-api-user image
   - docker push ramshadows/udagram-api-user:v4
   #Tag udagram-frontend image
-  - docker tag udagram-frontend ramshadows/udagram-frontend:v4
+  - docker tag udagram-frontend ramshadows/udagram-frontend:v6
   # Push udagram-frontend
   - docker push ramshadows/udagram-frontend:v4
   #Tag reverseproxy image

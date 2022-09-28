@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend-user
-          image: docker.io/ramshadows/udagram-api-user:v3
+          image: docker.io/ramshadows/udagram-api-user:v4
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
