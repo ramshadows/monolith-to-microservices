@@ -16,15 +16,17 @@ spec:
     spec:
       containers:
         - name: backend-feed
-          image: docker.io/ramshadows/udagram-api-feed:v3
+          image: docker.io/ramshadows/udagram-api-feed:v7
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
           resources:
-            limits:
-              cpu: 200m
             requests:
-              cpu: 200m
+              memory: "100Mi"
+            limits:
+              memory: "200Mi"
+          command: ["stress"]
+          args: ["--vm", "1", "--vm-bytes", "150M", "--vm-hang", "1"]
           envFrom:
             - secretRef:
                 name: env-secret
