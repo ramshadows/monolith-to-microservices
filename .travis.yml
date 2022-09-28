@@ -24,18 +24,18 @@ after_success:
   # Assuming DOCKER_PASSWORD and DOCKER_USERNAME are set in the Travis repository settings
   - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
   # Tag udagram-api-feed image
-  - docker tag udagram-api-feed ramshadows/udagram-api-feed:v4
+  - docker tag udagram-api-feed ramshadows/udagram-api-feed:v7
   # Push udagram-api-feed
-  - docker push ramshadows/udagram-api-feed:v4
+  - docker push ramshadows/udagram-api-feed:v7
   # Tag udagram-api-user image
-  - docker tag udagram-api-user ramshadows/udagram-api-user:v4
+  - docker tag udagram-api-user ramshadows/udagram-api-user:v7
   # Push udagram-api-user image
-  - docker push ramshadows/udagram-api-user:v4
+  - docker push ramshadows/udagram-api-user:v7
   #Tag udagram-frontend image
-  - docker tag udagram-frontend ramshadows/udagram-frontend:v6
+  - docker tag udagram-frontend ramshadows/udagram-frontend:v7
   # Push udagram-frontend
-  - docker push ramshadows/udagram-frontend:v4
+  - docker push ramshadows/udagram-frontend:v7
   #Tag reverseproxy image
-  - docker tag reverseproxy ramshadows/reverseproxy:v4
+  - docker tag reverseproxy ramshadows/reverseproxy:v7
   # Push reverseproxy image
-  - docker push ramshadows/reverseproxy:v4
+  - docker push ramshadows/reverseproxy:v7
