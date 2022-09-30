@@ -15,12 +15,12 @@ spec:
         service: reverseproxy
     spec:
       containers:
-        - image: docker.io/ramshadows/reverseproxy:v11
+        - image: docker.io/ramshadows/reverseproxy:v12
           name: reverseproxy
           imagePullPolicy: Always
           resources:
             requests:
-              cpu: 400m
+              cpu: 250m
             limits:
               cpu: 500m
           ports:

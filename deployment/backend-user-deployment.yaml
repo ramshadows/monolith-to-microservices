@@ -16,13 +16,13 @@ spec:
     spec:
       containers:
         - name: backend-user
-          image: docker.io/ramshadows/udagram-api-user:v11
+          image: docker.io/ramshadows/udagram-api-user:v12
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
           resources:
             requests:
-              cpu: 400m
+              cpu: 350m
             limits:
               cpu: 500m
           envFrom:
