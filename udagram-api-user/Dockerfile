@@ -1,19 +1,11 @@
-FROM node:16.17.1-alpine
-
+FROM node:12
 # Create app directory
 WORKDIR /usr/src/app
-
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied where available (npm@5+)
 COPY package*.json ./
-
-# update npm to the latest version
-RUN npm install -g npm@latest
-
-RUN npm install 
-
+RUN npm ci 
 # Bundle app source
 COPY . .
-
 EXPOSE 8080
 CMD [ "npm", "run", "prod" ]

@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 16
+  - 12
 #dist: jammy
 sudo: required
 services:
@@ -13,7 +13,7 @@ before_install:
   - docker build -t udagram-api-feed ./udagram-api-feed 
   - docker build -t udagram-api-user ./udagram-api-user 
   - docker build -t udagram-frontend ./udagram-frontend 
-  - docker build -t reverseproxy ./udagram-api-feed 
+  - docker build -t reverseproxy ./udagram-reverseproxy
 script:
   - docker images
 
@@ -24,18 +24,18 @@ after_success:
   # Assuming DOCKER_PASSWORD and DOCKER_USERNAME are set in the Travis repository settings
   - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
   # Tag udagram-api-feed image
-  - docker tag udagram-api-feed ramshadows/udagram-api-feed:v8
+  - docker tag udagram-api-feed ramshadows/udagram-api-feed:latest
   # Push udagram-api-feed
-  - docker push ramshadows/udagram-api-feed:v8
+  - docker push ramshadows/udagram-api-feed:latest
   # Tag udagram-api-user image
-  - docker tag udagram-api-user ramshadows/udagram-api-user:v8
+  - docker tag udagram-api-user ramshadows/udagram-api-user:latest
   # Push udagram-api-user image
-  - docker push ramshadows/udagram-api-user:v8
+  - docker push ramshadows/udagram-api-user:latest
   #Tag udagram-frontend image
-  - docker tag udagram-frontend ramshadows/udagram-frontend:v8
+  - docker tag udagram-frontend ramshadows/udagram-frontend:latest
   # Push udagram-frontend
-  - docker push ramshadows/udagram-frontend:v8
+  - docker push ramshadows/udagram-frontend:latest
   #Tag reverseproxy image
-  - docker tag reverseproxy ramshadows/reverseproxy:v8
+  - docker tag reverseproxy ramshadows/reverseproxy:latest
   # Push reverseproxy image
-  - docker push ramshadows/reverseproxy:v8
+  - docker push ramshadows/reverseproxy:latest

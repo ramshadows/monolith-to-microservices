@@ -18,11 +18,12 @@ spec:
       containers:
         - name: frontend
           imagePullPolicy: Always
-          image: docker.io/ramshadows/udagram-frontend:v8
+          image: docker.io/ramshadows/udagram-frontend:latest
           ports:
             - containerPort: 80
           resources:
-            limits:
-              cpu: 80m
             requests:
-              cpu: 80m
+              cpu: "500m"
+            limits:
+              cpu: "600m"
+          

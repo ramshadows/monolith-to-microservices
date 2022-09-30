@@ -46,3 +46,6 @@ set_env.sh
 *aws-secret.yaml
 *env-
 *env-secret.yaml
+set_env.sh
+deployment/aws-secret.yaml
+deployment/env-secret.yaml

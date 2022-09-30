@@ -15,16 +15,16 @@ spec:
         service: reverseproxy
     spec:
       containers:
-        - image: docker.io/ramshadows/reverseproxy:v8
+        - image: docker.io/ramshadows/reverseproxy:latest
           name: reverseproxy
           imagePullPolicy: Always
           resources:
             requests:
-              memory: "100Mi"
+              memory: "64Mi"
+              cpu: "500m"
             limits:
-              memory: "200Mi"
-          command: ["stress"]
-          args: ["--vm", "1", "--vm-bytes", "150M", "--vm-hang", "1"]
+              memory: "1024Mi"
+              cpu: "600m"
           ports:
             - containerPort: 8080
       restartPolicy: Always
