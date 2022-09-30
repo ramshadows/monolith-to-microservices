@@ -15,7 +15,7 @@ spec:
         service: reverseproxy
     spec:
       containers:
-        - image: docker.io/ramshadows/reverseproxy:latest
+        - image: docker.io/ramshadows/reverseproxy:v11
           name: reverseproxy
           imagePullPolicy: Always
           resources:

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend-feed
-          image: docker.io/ramshadows/udagram-api-feed:latest
+          image: docker.io/ramshadows/udagram-api-feed:v11
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
