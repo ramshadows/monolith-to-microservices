@@ -2,28 +2,28 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: frontend
+    app: frontend
   name: frontend
 spec:
   selector:
     matchLabels:
-      service: frontend
+      app: frontend
   replicas: 2
   template:
     metadata:
       labels:
-        service: frontend
+        app: frontend
         api: external
     spec:
       containers:
         - name: frontend
           imagePullPolicy: Always
-          image: docker.io/ramshadows/udagram-frontend:v12
+          image: docker.io/ramshadows/udagram-frontend:v13
           ports:
             - containerPort: 80
           resources:
             requests:
-              cpu: 300m
+              cpu: 200m
             limits:
               cpu: 500m
           

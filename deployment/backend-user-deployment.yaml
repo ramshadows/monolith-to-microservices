@@ -2,27 +2,27 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: backend-user
+    app: backend-user
   name: backend-user
 spec:
   selector:
     matchLabels:
-      service: backend-user
+      app: backend-user
   replicas: 2
   template:
     metadata:
       labels:
-        service: backend-user
+        app: backend-user
     spec:
       containers:
         - name: backend-user
-          image: docker.io/ramshadows/udagram-api-user:v12
+          image: docker.io/ramshadows/udagram-api-user:v13
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
           resources:
             requests:
-              cpu: 350m
+              cpu: 200m
             limits:
               cpu: 500m
           envFrom:

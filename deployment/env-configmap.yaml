@@ -3,7 +3,6 @@ kind: ConfigMap
 metadata:
   name: my-configmap
 data:
-  AWS_BUCKET: project3sebucket
   AWS_REGION: us-east-1
   AWS_PROFILE: default
   JWT_SECRET: testing
